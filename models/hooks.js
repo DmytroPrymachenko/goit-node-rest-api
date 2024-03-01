@@ -1,10 +1,9 @@
-export const handleSaveError = (error, data, next) => {
-  error.status = 400;
+export const setUpdateSettings = function (next) {
+  this.options.new = true;
+  this.options.runValidators = true;
   next();
 };
-
-export const setUpdateSetting = function (next) {
-  this.options.new = true;
-  this.options.ruvValidators = true;
+export const handleSaveError = (error, data, next) => {
+  error.status = 400;
   next();
 };
