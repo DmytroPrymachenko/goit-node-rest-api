@@ -20,6 +20,7 @@ const contact = new Schema(
   },
   { versionKey: null }
 );
+
 contact.post("save", handleSaveError);
 contact.pre("findOneAndUpdate", setUpdateSettings);
 contact.post("findOneAndUpdate", handleSaveError);
