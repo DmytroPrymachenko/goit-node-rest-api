@@ -10,7 +10,11 @@ import {
 
 import isValididId from "../middlewares/isValididId.js";
 
+import authtenticate from "../middlewares/authenticate.js";
+
 const contactsRouter = express.Router();
+
+contactsRouter.use(authtenticate);
 
 contactsRouter.get("/", getAllContacts);
 
