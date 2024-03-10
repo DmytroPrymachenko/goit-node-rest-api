@@ -13,3 +13,6 @@ export const setToken = async (id, token = "") =>
 export const setAvatar = (id, avatarURL) => {
   User.findByIdAndUpdate(id, { avatarURL });
 };
+
+export const updateByFilter = (filter, data) =>
+  User.findOneAndUpdate(filter, data);
