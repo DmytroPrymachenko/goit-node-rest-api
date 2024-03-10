@@ -1,10 +1,8 @@
 import HttpError from "../helpers/HttpError.js";
 import {
   createContactSchema,
-
   updateContactSchema,
 } from "../schemas/contactsSchemas.js";
-
 
 import * as contactsService from "../services/contactsServices.js";
 export const getAllContacts = async (req, res, next) => {
