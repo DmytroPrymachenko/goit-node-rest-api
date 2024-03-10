@@ -12,6 +12,7 @@ const contact = new Schema(
     },
     phone: {
       type: String,
+      require: true,
     },
     favorite: {
       type: Boolean,
