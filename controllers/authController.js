@@ -21,6 +21,7 @@ export const signup = async (req, res, next) => {
     if (user) {
       throw HttpError(409, "Email already in use");
     }
+
     const verificationToken = nanoid();
     const avatarURL = gravatar.url(email);
     const newUser = await authServices.signup({
