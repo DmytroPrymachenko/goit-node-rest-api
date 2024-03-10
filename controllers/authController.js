@@ -114,7 +114,7 @@ export const changeAvatat = async (req, res, next) => {
 export const verify = async (req, res, next) => {
   try {
     const { verificationToken } = req.params;
-    const user = await findUser({ verificationToken });
+    const user = await userServices.findUser({ verificationToken });
 
     if (!user) {
       throw HttpError(404, "User not found");
@@ -138,7 +138,7 @@ export const resendVerifyEmail = async (req, res, next) => {
     if (!email) {
       throw HttpError(400, "missing required field email");
     }
-    const user = await findUser({ email });
+    const user = await userServices.findUser({ email });
     if (!user) {
       throw HttpError(404, "User not found");
     }
